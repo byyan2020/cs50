@@ -1,6 +1,8 @@
-import stdio.h
-import cs50.h
+#include <stdio.h>
+#include <cs50.h>
 
-int main(void){
-    printf("hello, world/n");
+int main(void)
+{
+    string answer = get_string("what is your name?");
+    printf("hello, %s\n", answer);
 }
