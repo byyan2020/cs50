@@ -12,16 +12,16 @@ int main(void)
     while (size < 1 || size > 8);
 
     // print line 1 to line n
-    for (int k = 1, k <= size, k++)
+    for (int line = 1, line <= size, line++)
     {
         // print the first pyramid
         // print space*(size-i)
-        for (int i = 1; i <= size - k; i++)
+        for (int i = 1; i <= size - line; i++)
         {
             printf(" ");
         }
         // print #*i
-        for (int j = 1; j <= k; j++)
+        for (int j = 1; j <= line; j++)
         {
             printf("#");
         }
@@ -30,12 +30,12 @@ int main(void)
         printf("  ");
 
         // print the second pyramid
-        for (int m = 1; m <= k; m++ )
+        for (int m = 1; m <= line; m++ )
         {
             printf("#");
         }
 
-        for (int n = 1; n <= size - k; n++)
+        for (int n = 1; n <= size - line; n++)
         {
             printf(" ");
         }
