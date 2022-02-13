@@ -12,7 +12,7 @@ int main(void)
     while (size < 1 || size > 8);
 
     // print line 1 to line n
-    for (k = 1, k <= size, k++)
+    for (int k = 1, k <= size, k++)
     {
         // print the first pyramid
         // print space*(size-i)
