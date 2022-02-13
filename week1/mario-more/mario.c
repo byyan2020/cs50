@@ -30,7 +30,7 @@ int main(void)
         printf("  ");
 
         // print the second pyramid
-        for (int m = 1; m <= line; m++ )
+        for (int m = 1; m <= line; m++)
         {
             printf("#");
         }
