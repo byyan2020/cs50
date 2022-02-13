@@ -1,0 +1,5 @@
+do input num
+while num >= 1 and num >= 8
+
+for n in num 1-8:
+    print space*(num-n) #*n
