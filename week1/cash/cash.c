@@ -60,12 +60,12 @@ int calculate_dimes(int cents)
 
 int calculate_nickels(int cents)
 {
-    int nickels = cents/5;
+    int nickels = cents / 5;
     return nickels;
 }
 
 int calculate_pennies(int cents)
 {
-    int pennies = cents/1;
+    int pennies = cents / 1;
     return pennies;
 }
