@@ -35,11 +35,6 @@ int main(void)
             printf("#");
         }
 
-        for (int n = 1; n <= size - line; n++)
-        {
-            printf(" ");
-        }
-
         printf("\n");
     }
 
