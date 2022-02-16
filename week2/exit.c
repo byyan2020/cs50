@@ -14,4 +14,3 @@ int main(int argc, string argv[] )
 
 }
 
-printf("%i", main("hello"));
