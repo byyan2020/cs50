@@ -4,5 +4,5 @@
 int main(void)
 {
     printf("something went wrong\n");
-    return 2
+    return 2;
 }
