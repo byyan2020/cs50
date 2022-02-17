@@ -81,7 +81,7 @@ char sub(char c, string key)
 {
     // char: uppercase char
     // string: uppercase string
-    index = c - 65;
+    int index = c - 65;
     char sub_c = key[index];
     return sub_c
 }
