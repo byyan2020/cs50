@@ -81,13 +81,7 @@ char sub(char c, string key)
 {
     // char: uppercase char
     // string: uppercase string
-    int key_length = strlen(key);
-    for (int i = o; i < key_length; i++)
-    {
-        if (c == key[i])
-        {
-            
-        }
-    }
+    index = c - 65;
+    char sub_c = 
 
 }
