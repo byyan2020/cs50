@@ -27,13 +27,13 @@ int main(int argc, string argv[])
 
     for (int i = 0; i < str_length; i++)
     {
-        if (isalpha(key[i]) != 1)
+        if (isalpha(key[i]) == 0)
         {
-            printf("%c", key[i]);
+            // printf("%c\n", key[i]);
             printf("Key must contain 26 charcters\n");
             return 1;
         }
     }
 
-    printf("%s", key);
+    printf("%s\n", key);
 }
