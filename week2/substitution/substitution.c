@@ -3,6 +3,8 @@
 #include <string.h>
 #include <ctype.h>
 
+char sub(char c, string key);
+
 int main(int argc, string argv[])
 {
     // accept a single command-line argument
@@ -51,4 +53,11 @@ int main(int argc, string argv[])
             plaintext[i] = sub(plaintext[i]);
         }
     }
+
+    printf("ciphertext: s%", plaintext);
+}
+
+char sub(char c, string key)
+{
+    
 }
