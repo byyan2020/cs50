@@ -43,12 +43,12 @@ int main(int argc, string argv[])
     string plaintext = get_string("plaintext: ");
 
     // unify key to uppercase
-    string key_length = strlen(key);
+    int key_length = strlen(key);
     for (int i = 0; i < key_length; i++)
     {
         if islower(key[i])
         {
-            key[i] = toupper[i];
+            key[i] = toupper(key[i]);
         }
     }
 
@@ -64,16 +64,17 @@ int main(int argc, string argv[])
             if islower(current_char)
             {
                 current_char = toupper(current_char);
-                plaintext[i] = sub(current_char);
+                plaintext[i] = sub(current_char, key);
+                plaintext[i] = tolower(plaintext[i]);
             }
             else
             {
-                plaintext[i] = sub(current_char);
+                plaintext[i] = sub(current_char, key);
             }
         }
     }
 
-    printf("ciphertext: s%", plaintext);
+    printf("ciphertext: %s\n", plaintext);
 }
 
 char sub(char c, string key)
