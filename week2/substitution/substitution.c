@@ -46,6 +46,6 @@ int main(int argc, string argv[])
 
     for (int i = 0; i < text_length; i++)
     {
-        
+        if isplaintext[i]
     }
 }
