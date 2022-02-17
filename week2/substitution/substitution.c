@@ -42,23 +42,6 @@ int main(int argc, string argv[])
     // take in the plaintext
     string plaintext = get_string("plaintext: ");
 
-    // start the substitution
-    string ciphertext;
-    int text_length = strlen(plaintext);
-
-    for (int i = 0; i < text_length; i++)
-    {
-        if isalpha(plaintext[i])
-        {
-            plaintext[i] = sub(plaintext[i]);
-        }
-    }
-
-    printf("ciphertext: s%", plaintext);
-}
-
-char sub(char c, string key)
-{
     // unify key to uppercase
     string key_length = strlen(key);
     for (int i = 0; i < key_length; i++)
@@ -69,5 +52,42 @@ char sub(char c, string key)
         }
     }
 
-    printf("%s", key);
+    // start the substitution
+    string ciphertext;
+    int text_length = strlen(plaintext);
+
+    for (int i = 0; i < text_length; i++)
+    {
+        char current_char = plaintext[i];
+        if isalpha(current_char)
+        {
+            if islower(current_char)
+            {
+                current_char = toupper(current_char);
+                plaintext[i] = sub(current_char);
+            }
+            else
+            {
+                plaintext[i] = sub(current_char);
+            }
+
+        }
+    }
+
+    printf("ciphertext: s%", plaintext);
+}
+
+char sub(char c, string key)
+{
+    // char: uppercase char
+    // string: uppercase string
+    int key_length = strlen(key);
+    for (int i = o; i < key_length; i++)
+    {
+        if (c == key[i])
+        {
+            
+        }
+    }
+
 }

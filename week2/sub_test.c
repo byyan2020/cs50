@@ -12,9 +12,9 @@ int main(void)
     {
         if islower(key[i])
         {
-            key[i] = toupper[i];
+            key[i] = toupper(key[i]);
         }
     }
 
-    printf("%s", key);
+    printf("%s\n", key);
 }
