@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int main(int argc, string argv[])
 {
@@ -8,7 +9,7 @@ int main(int argc, string argv[])
     if (argc != 2)
     {
         printf("Usage: ./substitution key\n");
-        return 1
+        return 1;
     }
 
     // hold the command-line argument as the key
@@ -26,6 +27,12 @@ int main(int argc, string argv[])
 
     for (int i = 0; i < str_length; i++)
     {
-        if iskey[i]
+        if (isalpha(key[i]) != 1)
+        {
+            printf("Key must contain 26 charcters\n");
+            return 1;
+        }
     }
+
+    printf("%s", key);
 }
