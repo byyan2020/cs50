@@ -37,6 +37,15 @@ int main(int argc, string argv[])
 
     // printf("%s\n", key);
 
-    // take in plaintext
+    // take in the plaintext
+    string plaintext = get_string("plaintext: ");
 
+    // start the substitution
+    string ciphertext;
+    int text_length = strlen(plaintext);
+
+    for (int i = 0; i < text_length; i++)
+    {
+        
+    }
 }
