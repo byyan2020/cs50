@@ -53,7 +53,6 @@ int main(int argc, string argv[])
     }
 
     // start the substitution
-    string ciphertext;
     int text_length = strlen(plaintext);
 
     for (int i = 0; i < text_length; i++)
