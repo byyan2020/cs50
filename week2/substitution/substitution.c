@@ -59,5 +59,10 @@ int main(int argc, string argv[])
 
 char sub(char c, string key)
 {
-    
+    // unify key to uppercase
+    string key_length = strlen(key);
+    for (int i = 0; i < key_length; i++)
+    {
+        if 
+    }
 }
