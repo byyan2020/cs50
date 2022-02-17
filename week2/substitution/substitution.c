@@ -63,6 +63,11 @@ char sub(char c, string key)
     string key_length = strlen(key);
     for (int i = 0; i < key_length; i++)
     {
-        if 
+        if islower(key[i])
+        {
+            key[i] = toupper[i];
+        }
     }
+
+    printf("%s", key);
 }
