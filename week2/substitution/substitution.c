@@ -46,7 +46,7 @@ int main(int argc, string argv[])
     // test if there are duplicate alpha
 
     int dic[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-    for (int i = 0, i < 26, i++)
+    for (i = 0, i < 26, i++)
     {
         dic[key[i]-65]++;
         if (dic[key[i]-65]>1)
