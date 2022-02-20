@@ -44,14 +44,17 @@ int main(int argc, string argv[])
     printf("%s\n", key);
 
     // test if there are duplicate alpha
-    /*
-    dic = [0,0...0]
-    for key[i] from 0 to 25
-        dic[key[i]-65]++;
-        if dic[key[i]-65] >1;
-            wrong
-     */
 
+    int dic[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    for (int i = 0, i < 26, i++)
+    {
+        dic[key[i]-65]++;
+        if (dic[key[i]-65]>1)
+        {
+            printf("Key must contain 26 charcters\n");
+            return 1;
+        }
+    }
 
     // take in the plaintext
     string plaintext = get_string("plaintext: ");
