@@ -16,20 +16,18 @@ int main(int argc, string argv[])
 
     // hold the command-line argument as the key
     string key = argv[1];
-
-    // test if the key is valid
-    int count = 0;
     int str_length = strlen(key);
 
+    // test if the key length is 26
     if (str_length != 26)
     {
         printf("Key must contain 26 charcters\n");
         return 1;
     }
 
+    // test if there are char not alpha
     for (int i = 0; i < str_length; i++)
     {
-        // test if there are char not alpha
         if (isalpha(key[i]) == 0)
         {
             // printf("%c\n", key[i]);
@@ -44,7 +42,7 @@ int main(int argc, string argv[])
         }
     }
 
-        // test if there are duplicate alpha
+    // test if there are duplicate alpha
     int diff = 0;
     for (int i = 0; i < str_length; i++)
     {
