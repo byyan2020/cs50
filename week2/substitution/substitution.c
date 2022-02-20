@@ -44,10 +44,11 @@ int main(int argc, string argv[])
         }
     }
 
-        // test if there are duplicate alpha
+    // test if there are duplicate alpha
+    int diff = 0;
     for (int i = 0; i < str_length; i++)
     {
-        
+        diff = diff ^ i ^ key[i];
     }
 
     // printf("%s\n", key);
