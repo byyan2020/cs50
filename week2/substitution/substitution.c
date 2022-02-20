@@ -41,12 +41,11 @@ int main(int argc, string argv[])
             key[i] = toupper(key[i]);
         }
     }
-    printf("%s\n", key);
+    // printf("%s\n", key);
 
     // test if there are duplicate alpha
-
     int dic[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-    for (i = 0, i < 26, i++)
+    for (int i = 0; i < 26; i++)
     {
         dic[key[i]-65]++;
         if (dic[key[i]-65]>1)
