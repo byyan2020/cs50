@@ -35,6 +35,11 @@ int main(int argc, string argv[])
             printf("Key must contain 26 charcters\n");
             return 1;
         }
+
+        if islower(key[i])
+        {
+            key[i] = toupper(key[i]);
+        }
     }
 
     // printf("%s\n", key);
