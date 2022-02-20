@@ -44,7 +44,13 @@ int main(int argc, string argv[])
     printf("%s\n", key);
 
     // test if there are duplicate alpha
-    
+    /*
+    dic = [0,0...0]
+    for key[i] from 0 to 25
+        dic[key[i]-65]++;
+        if dic[key[i]-65] >1;
+            wrong
+     */
 
 
     // take in the plaintext
