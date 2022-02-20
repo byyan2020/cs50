@@ -8,4 +8,4 @@ How do you know?: Merge sort uses the least amount of time, whether the list is 
 
 sort3 uses: Selection
 
-How do you know?: TODO
+How do you know?: It uses similar amount of time when the list is random, sorted and reversed. And the time it used increased sharply when the list size increased.
