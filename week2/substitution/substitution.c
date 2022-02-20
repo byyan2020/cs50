@@ -48,7 +48,7 @@ int main(int argc, string argv[])
     for (int i = 0; i < str_length; i++)
     {
         diff = diff ^ i ^ (key[i]-65);
-        printf("i = %i, key[i] - 65 = %i, diff = %i\n", i, key[i], diff);
+        printf("i = %i, key[i] - 65 = %i, diff = %i\n", i, (key[i]-65), diff);
     }
     if (diff != 0)
     {
