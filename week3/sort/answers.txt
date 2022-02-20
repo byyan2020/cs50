@@ -1,11 +1,11 @@
-sort1 uses: TODO
+sort1 uses: Bubble sort
 
 How do you know?: TODO
 
-sort2 uses: TODO
+sort2 uses: Merge sort
 
-How do you know?: TODO
+How do you know?: merge sort uses the least time no matter the list is random, reversed or sorted.
 
-sort3 uses: TODO
+sort3 uses: Selection
 
 How do you know?: TODO
