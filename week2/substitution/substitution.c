@@ -29,6 +29,7 @@ int main(int argc, string argv[])
 
     for (int i = 0; i < str_length; i++)
     {
+        // test if there are char not alpha
         if (isalpha(key[i]) == 0)
         {
             // printf("%c\n", key[i]);
@@ -36,26 +37,20 @@ int main(int argc, string argv[])
             return 1;
         }
 
+        // unify key to uppercase
         if islower(key[i])
         {
             key[i] = toupper(key[i]);
         }
+
+        // test if there are duplicate alpha
+        
     }
 
     // printf("%s\n", key);
 
     // take in the plaintext
     string plaintext = get_string("plaintext: ");
-
-    // unify key to uppercase
-    int key_length = strlen(key);
-    for (int i = 0; i < key_length; i++)
-    {
-        if islower(key[i])
-        {
-            key[i] = toupper(key[i]);
-        }
-    }
 
     // start the substitution
     int text_length = strlen(plaintext);
