@@ -44,7 +44,7 @@ int main(int argc, string argv[])
     // printf("%s\n", key);
 
     // test if there are duplicate alpha
-    int dic[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    int dic[26] = {0};
     for (int i = 0; i < 26; i++)
     {
         dic[key[i] - 65]++;
