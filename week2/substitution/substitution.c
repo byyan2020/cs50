@@ -42,8 +42,11 @@ int main(int argc, string argv[])
         {
             key[i] = toupper(key[i]);
         }
+    }
 
         // test if there are duplicate alpha
+    for (int i = 0; i < str_length; i++)
+    {
         
     }
 
