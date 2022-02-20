@@ -44,11 +44,16 @@ int main(int argc, string argv[])
         }
     }
 
-    // test if there are duplicate alpha
+        // test if there are duplicate alpha
     int diff = 0;
     for (int i = 0; i < str_length; i++)
     {
-        diff = diff ^ i ^ key[i];
+        diff = diff ^ i ^ (key[i]-65);
+    }
+    if (diff != 0)
+    {
+        printf("Key must contain 26 charcters\n");
+        return 1;
     }
 
     // printf("%s\n", key);
