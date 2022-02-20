@@ -47,8 +47,8 @@ int main(int argc, string argv[])
     int dic[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     for (int i = 0; i < 26; i++)
     {
-        dic[key[i]-65]++;
-        if (dic[key[i]-65]>1)
+        dic[key[i] - 65]++;
+        if (dic[key[i] - 65]>1)
         {
             printf("Key must contain 26 charcters\n");
             return 1;
