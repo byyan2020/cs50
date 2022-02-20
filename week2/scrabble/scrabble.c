@@ -36,5 +36,15 @@ int main(void)
 int compute_score(string word)
 {
     // TODO: Compute and return score for string
-    
+    int word_length = strlen(word);
+    int points = 0;
+    for (int i = 0; i < word_length; i++)
+    {
+        if (isalpha(word[i]))
+        {
+            word[i] = toupper(word[i]);
+            points = points + POINTS[word[i]-65];
+        }
+    }
+    return points;
 }
