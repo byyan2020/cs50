@@ -41,12 +41,14 @@ int main(int argc, string argv[])
             key[i] = toupper(key[i]);
         }
     }
+    printf("%s\n", key);
 
     // test if there are duplicate alpha
     int diff = 0;
     for (int i = 0; i < str_length; i++)
     {
         diff = diff ^ i ^ (key[i]-65);
+        printf("i = %i, key[i] - 65 = %i, diff = %i\n", i, key[i], diff);
     }
     if (diff != 0)
     {
@@ -54,7 +56,6 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    // printf("%s\n", key);
 
     // take in the plaintext
     string plaintext = get_string("plaintext: ");
