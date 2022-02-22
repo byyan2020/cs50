@@ -202,6 +202,8 @@ int sort_strength(int strengths[])
     return index[];
 }
 
+void
+
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
