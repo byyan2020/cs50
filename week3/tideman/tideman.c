@@ -162,11 +162,16 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    int vic_strength;
+    int strengths[pair_count];
     /*
-    
+
      */
     return;
+}
+
+int sort_strength(int strengths[])
+{
+    return index[];
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
