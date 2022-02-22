@@ -181,11 +181,21 @@ void sort_pairs(void)
 
 int sort_strength(int strengths[])
 {
+    int index[pair_count];
+    for (int i = 0; i < pair_count - 1; i++)
+    {
+        index[i] = i;
+    }
+
     for (int i = 0; i < pair_count - 1; i++)
     {
         for (int j = i+1; j < pair_count; j++)
         {
-            if strengths[i] < strengths[j] 
+            if (strengths[i] < strengths[j])
+            {
+                swap(strength[i], strength[j]);
+                swap(index[i], index[j]);
+            }
         }
         }
     }
