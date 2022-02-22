@@ -160,12 +160,6 @@ void add_pairs(void)
     return;
 }
 
-int index[pair_count];
-for (int i = 0; i < pair_count - 1; i++)
-{
-    index[i] = i;
-}
-
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
@@ -174,8 +168,7 @@ void sort_pairs(void)
     {
         strengths[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
     }
-    int index[pair_count];
-    index = sort_strength(strengths);
+    sort_strength(strengths);
     pair temp;
     for (int i = 0; i < pair_count; i++)
     {
