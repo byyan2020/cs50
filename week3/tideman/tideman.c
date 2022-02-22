@@ -84,7 +84,7 @@ int main(int argc, string argv[])
                 return 3;
             }
 
-            printf("%i\n", ranks[j]);
+            // printf("%i\n", ranks[j]);
         }
 
 
