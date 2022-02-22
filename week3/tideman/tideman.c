@@ -163,7 +163,9 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     int vic_strength;
+    /*
     
+     */
     return;
 }
 
