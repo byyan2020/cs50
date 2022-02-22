@@ -168,19 +168,12 @@ void sort_pairs(void)
     {
         strengths[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
     }
-    sort_strength(strengths);
-    pair temp;
+
+    int index[pair_count];
     for (int i = 0; i < pair_count; i++)
     {
-        temp = pairs[i];
-        pairs[i] = pairs[index[i]];
-        pairs[index[i]] = temp;
+        index[i] = i;
     }
-    return;
-}
-
-int sort_strength(int strengths[])
-{
 
     for (int i = 0; i < pair_count - 1; i++)
     {
@@ -188,18 +181,25 @@ int sort_strength(int strengths[])
         {
             if (strengths[i] < strengths[j])
             {
-                int temp = strengths[i];
+                int temp1 = strengths[i];
                 strengths[i] = strengths[j];
-                strengths[j] = temp;
+                strengths[j] = temp1;
 
-                int temp = index[i];
+                int temp2 = index[i];
                 index[i] = index[j];
-                index[j] = temp;
+                index[j] = temp2;
             }
         }
-        }
     }
-    return index;
+
+    pair temp3;
+    for (int i = 0; i < pair_count; i++)
+    {
+        temp3 = pairs[i];
+        pairs[i] = pairs[index[i]];
+        pairs[index[i]] = temp3;
+    }
+    return;
 }
 
 
