@@ -185,7 +185,7 @@ int sort_strength(int strengths[])
     {
         for (int j = i+1; j < pair_count; j++)
         {
-            if strengths[i] < strengths[j]
+            if strengths[i] < strengths[j] 
         }
         }
     }
