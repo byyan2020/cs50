@@ -152,6 +152,7 @@ void add_pairs(void)
                 pairs[n].loser = i;
                 n++;
             }
+            printf("%i %i\n", pairs[n-1].winner, pairs[n-1].loser);
         }
     }
     pair_count = n;
