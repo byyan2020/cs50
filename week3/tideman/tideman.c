@@ -94,6 +94,7 @@ int main(int argc, string argv[])
     }
 
     add_pairs();
+    printf("%i", pair_count);
     sort_pairs();
     lock_pairs();
     print_winner();
@@ -153,13 +154,15 @@ void add_pairs(void)
             }
         }
     }
+    pair_count = n + 1;
     return;
 }
 
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // TODO
+    int vic_strength;
+
     return;
 }
 
