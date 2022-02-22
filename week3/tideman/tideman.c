@@ -33,6 +33,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+int sort_strength(int strengths[]);
 
 int main(int argc, string argv[])
 {
@@ -171,13 +172,16 @@ void sort_pairs(void)
     pair temp;
     for ((int i = 0; i < pair_count; i++)
     {
-        pair[i] index[i]
+        temp = pair[i];
+        pair[i] = pair[index[i]];
+        pair[index[i]] = temp;
     }
     return;
 }
 
 int sort_strength(int strengths[])
 {
+    
     return index[];
 }
 
