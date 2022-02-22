@@ -19,12 +19,15 @@ typedef struct
 }
 pair;
 
+
+
 // Array of candidates
 string candidates[MAX];
 pair pairs[MAX * (MAX - 1) / 2];
 
 int pair_count;
 int candidate_count;
+int index
 
 // Function prototypes
 bool vote(int rank, string name, int ranks[]);
@@ -160,11 +163,7 @@ void add_pairs(void)
     return;
 }
 
-int index[pair_count];
-for (int i = 0; i < pair_count - 1; i++)
-{
-    index[i] = i;
-}
+
 
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
