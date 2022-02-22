@@ -193,16 +193,20 @@ int sort_strength(int strength[])
         {
             if (strength[i] < strength[j])
             {
-                swap(strength[i], strength[j]);
-                swap(index[i], index[j]);
+                int temp = strength[i];
+                strength[i] = strength[j];
+                strength[j] = temp;
+
+                int temp = index[i];
+                index[i] = index[j];
+                index[j] = temp;
             }
         }
         }
     }
-    return index[];
+    return index[pair_count];
 }
 
-void
 
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
