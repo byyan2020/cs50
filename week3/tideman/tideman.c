@@ -94,7 +94,7 @@ int main(int argc, string argv[])
     }
 
     add_pairs();
-    printf("%i", pair_count);
+    // printf("%i", pair_count);
     sort_pairs();
     lock_pairs();
     print_winner();
@@ -152,7 +152,7 @@ void add_pairs(void)
                 pairs[n].loser = i;
                 n++;
             }
-            printf("%i %i\n", pairs[n-1].winner, pairs[n-1].loser);
+            // printf("%i %i\n", pairs[n-1].winner, pairs[n-1].loser);
         }
     }
     pair_count = n;
@@ -163,7 +163,7 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     int vic_strength;
-
+    
     return;
 }
 
