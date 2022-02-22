@@ -167,7 +167,12 @@ void sort_pairs(void)
     {
         strengths[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
     }
-    sort_strength(strengths[pair_count]);
+    int index[] = sort_strength(strengths[pair_count]);
+    pair temp;
+    for ((int i = 0; i < pair_count; i++)
+    {
+        pair[i] index[i]
+    }
     return;
 }
 
