@@ -206,9 +206,13 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
     /*
-    pairs from 0 to n
-        if no cycle
-            locked[i][j] = true
+    locked_source[candidate_count] = 0
+    pairs i from 0 to n
+        locked_source[pairs[i].winner]++
+        for j locked_source from 0 to candidate_count-1
+            if locked_source[j] != 1
+                break for
+        locked[i][j] = true
      */
     return;
 }
