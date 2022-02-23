@@ -229,6 +229,7 @@ void lock_pairs(void)
     {
         locked_source[i] = 0;
     }
+    
     bool flag = true;
     for (int i = 0; i < pair_count; i++)
     {
