@@ -233,6 +233,7 @@ void lock_pairs(void)
     bool flag = true;
     for (int i = 0; i < pair_count; i++)
     {
+        // detect cycle. wrong idea
         locked_source[pairs[i].winner]++;
         for (int j = 0; j < candidate_count; j++)
         {
