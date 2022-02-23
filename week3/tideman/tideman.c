@@ -215,6 +215,8 @@ void sort_pairs(void)
         pairs[i] = pairs[index[i]];
         pairs[index[i]] = temp3;
     }
+
+    
     return;
 }
 
