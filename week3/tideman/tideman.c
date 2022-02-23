@@ -190,8 +190,8 @@ void sort_pairs(void)
                 strengths[j] = temp1;
 
                 temp3 = pairs[i];
-                pairs[i] = pairs[index[i]];
-                pairs[index[i]] = temp3;
+                pairs[i] = pairs[j];
+                pairs[j] = temp3;
             }
         }
     }
