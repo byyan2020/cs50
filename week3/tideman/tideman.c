@@ -243,8 +243,27 @@ void print_winner(void)
     {
         for (int j = 0; j < candidate_count; j++)
         {
-            
+            if (locked[i][j])
+            {
+                locked_source[i]++;
+            }
         }
     }
+
+    int temp = locked_source[0];
+    int winner_index = 0;
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (temp < locked_source[i])
+        {
+            temp = locked_source[i];
+            winner_index = i;
+        }
+    }
+
+    string winner = candidates[winner_index];
+
+    printf("%s\n", winner);
+
     return;
 }
