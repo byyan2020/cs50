@@ -166,7 +166,7 @@ void sort_pairs(void)
     for (int i = 0; i < pair_count; i++)
     {
         strengths[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
-        printf("(%s,%s) %i", pairs[i].winner, pairs[i].loser, strengths[i]);
+        printf("(%s,%s) %i", candidates[pairs[i].winner], candidates[pairs[i].loser], strengths[i]);
     }
 
     printf("\n");
@@ -214,7 +214,7 @@ void sort_pairs(void)
         temp3 = pairs[i];
         pairs[i] = pairs[index[i]];
         pairs[index[i]] = temp3;
-        printf("(%s,%s) %i", pairs[i].winner, pairs[i].loser, strengths[i])
+        printf("(%s,%s) %i", candidates[pairs[i].winner], candidates[pairs[i].loser], strengths[i]);
     }
 
 
