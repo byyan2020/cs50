@@ -217,7 +217,7 @@ void sort_pairs(void)
         printf("(%s,%s) %i", candidates[pairs[i].winner], candidates[pairs[i].loser], strengths[i]);
     }
 
-
+    printf("\n");
     return;
 }
 
