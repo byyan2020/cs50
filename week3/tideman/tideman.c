@@ -177,6 +177,8 @@ void sort_pairs(void)
         index[i] = i;
     }
 
+    pair temp3;
+
     for (int i = 0; i < pair_count - 1; i++)
     {
         for (int j = i+1; j < pair_count; j++)
@@ -187,9 +189,9 @@ void sort_pairs(void)
                 strengths[i] = strengths[j];
                 strengths[j] = temp1;
 
-                int temp2 = index[i];
-                index[i] = index[j];
-                index[j] = temp2;
+                temp3 = pairs[i];
+                pairs[i] = pairs[index[i]];
+                pairs[index[i]] = temp3;
             }
         }
     }
@@ -208,12 +210,9 @@ void sort_pairs(void)
     printf("\n");
 
 
-    pair temp3;
+
     for (int i = 0; i < pair_count; i++)
     {
-        temp3 = pairs[i];
-        pairs[i] = pairs[index[i]];
-        pairs[index[i]] = temp3;
         printf("(%s,%s) %i", candidates[pairs[i].winner], candidates[pairs[i].loser], strengths[i]);
     }
 
