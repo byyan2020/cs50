@@ -166,7 +166,10 @@ void sort_pairs(void)
     for (int i = 0; i < pair_count; i++)
     {
         strengths[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
+        printf("%i ", strengths[i]);
     }
+
+    printf("\n");
 
     int index[pair_count];
     for (int i = 0; i < pair_count; i++)
@@ -190,6 +193,20 @@ void sort_pairs(void)
             }
         }
     }
+
+    for (int i = 0; i < pair_count; i++)
+    {
+        printf("%i ", strengths[i]);
+    }
+    printf("\n");
+
+
+    for (int i = 0; i < pair_count; i++)
+    {
+        printf("%i ", index[i]);
+    }
+    printf("\n");
+
 
     pair temp3;
     for (int i = 0; i < pair_count; i++)
