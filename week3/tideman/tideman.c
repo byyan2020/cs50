@@ -214,6 +214,7 @@ void sort_pairs(void)
         temp3 = pairs[i];
         pairs[i] = pairs[index[i]];
         pairs[index[i]] = temp3;
+        printf("(%s,%s) %i", pairs[i].winner, pairs[i].loser, strengths[i])
     }
 
 
