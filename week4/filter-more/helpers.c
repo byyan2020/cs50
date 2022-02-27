@@ -122,9 +122,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         image[k][l].rgbtGreen = 0;
                         image[k][l].rgbtBlue = 0;
                     }
-                    sum_red += image[k][l].rgbtRed * (-1);
-                    sum_green += image[k][l].rgbtGreen;
-                    sum_blue += image[k][l].rgbtBlue;
+                    Gx_red += image[k][l].rgbtRed * Gx[counter];
+                    Gx_green += image[k][l].rgbtGreen * Gx[counter];
+                    Gx_blue += image[k][l].rgbtBlue * Gx[counter];
+
+                    Gy_red += image[k][l].rgbtRed * Gy[counter];
+                    Gy_green += image[k][l].rgbtGreen * Gy[counter];
+                    Gy_blue += image[k][l].rgbtBlue * Gy[counter];
+                    
                     counter++;
                 }
             }
