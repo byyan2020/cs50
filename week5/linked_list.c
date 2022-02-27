@@ -26,6 +26,8 @@ int main(void)
     // update list to point to new node
     list = n;
 
+    printf("%i\n", list->number);
+
     // add a number to list
     n = malloc(sizeof(node));
     if (n == NULL)
