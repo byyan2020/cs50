@@ -61,8 +61,14 @@ int main(void)
         free(list);
     }
     n->number = 0;
-    n->next = list->next;
+    n->next = list;
     list = n;
+
+    // insert number in the middle
+    n = malloc(sizeof(node));
+    n->number = 9;
+    n->next = list->next->next->next;
+    list->next->next->next = n;
 
 
     // print numbers
