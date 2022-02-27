@@ -11,5 +11,10 @@ node;
 
 int main(void)
 {
+    // list of size 0
     node *list = NULL;
+
+    // add number to list
+    node *n = malloc(sizeof(node));
+    
 }
