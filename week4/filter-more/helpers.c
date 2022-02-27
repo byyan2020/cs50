@@ -134,10 +134,22 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     counter++;
                 }
             }
-            
-            copy[i][j].rgbtRed = std::min(round(sqrt(Gx_red^2 + Gy_red^2)), 255);
-            copy[i][j].rgbtGreen = std::min(round(sqrt(Gx_green^2 + Gy_green^2)), 255);
-            copy[i][j].rgbtBlue = std::min(round(sqrt(Gx_blue^2 + Gy_blue^2)), 255);
+
+            copy[i][j].rgbtRed = round(sqrt(Gx_red^2 + Gy_red^2));
+            copy[i][j].rgbtGreen = round(sqrt(Gx_green^2 + Gy_green^2));
+            copy[i][j].rgbtBlue =round(sqrt(Gx_blue^2 + Gy_blue^2));
+            if (copy[i][j].rgbtRed > 255)
+            {
+                copy[i][j].rgbtRed = 255;
+            }
+            if (copy[i][j].rgbtGreen > 255)
+            {
+                copy[i][j].rgbtGreen = 255;
+            }
+            if (copy[i][j].rgbtBlue > 255)
+            {
+                copy[i][j].rgbtBlue = 255;
+            }
             // printf("%i, %i, %i\n", image[i][j].rgbtRed, image[i][j].rgbtGreen, image[i][j].rgbtBlue);
         }
     }
