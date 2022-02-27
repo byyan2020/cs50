@@ -53,7 +53,7 @@ int main(void)
     list->next->next = n;
 
     // print numbers
-    for (node *tmp = list; tmp != NULL; tmp = list->next)
+    for (node *tmp = list; tmp != NULL; tmp = tmp->next)
     {
         printf("%i\n", tmp->number);
     }
