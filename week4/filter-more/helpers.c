@@ -40,17 +40,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            int total = image[i][j];
-            total = total + image[i-1][j-1];
-            total = total + image[i-1][j];
-            total = total + image[i-1][j+1];
-            total = total + image[i][j-1];
-            total = total + image[i][j+1];
-            total = total + image[i+1][j-1];
-            total = total + image[i+1][j];
-            total = total + image[i+1][j+1];
-            BYTE rgbtNew = round(total/9);
-            
+            // ave red
+                // sum surround value
+                    // if 
+
         }
     }
     return;
