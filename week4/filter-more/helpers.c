@@ -132,24 +132,39 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
                 }
             }
+            int result_red = round(sqrt(pow(Gx_red,2) + pow(Gy_red,2)));
+            int result_green = round(sqrt(pow(Gx_green,2) + pow(Gy_green,2)));
+            int result_blue = round(sqrt(pow(Gx_blue,2) + pow(Gy_blue,2)));
 
-            copy[i][j].rgbtRed = round(sqrt(pow(Gx_red,2) + pow(Gy_red,2)));
-            copy[i][j].rgbtGreen = round(sqrt(pow(Gx_green,2) + pow(Gy_green,2)));
-            copy[i][j].rgbtBlue =round(sqrt(pow(Gx_blue,2) + pow(Gy_blue,2)));
-
-            if (copy[i][j].rgbtRed > 255)
+            if (result_red > 255)
             {
                 copy[i][j].rgbtRed = 255;
             }
-            if (copy[i][j].rgbtGreen > 255)
+            else
+            {
+                copy[i][j].rgbtRed = result_red;
+            }
+
+            if (result_green > 255)
             {
                 copy[i][j].rgbtGreen = 255;
             }
-            if (copy[i][j].rgbtBlue > 255)
+            else
+            {
+                copy[i][j].rgbtGreen = result_green;
+            }
+
+            if (result_blue > 255)
             {
                 copy[i][j].rgbtBlue = 255;
             }
-            // printf("%i, %i, %i\n", image[i][j].rgbtRed, image[i][j].rgbtGreen, image[i][j].rgbtBlue);
+            else
+            {
+                copy[i][j].rgbtBlue = result_blue;
+            }
+
+
+
         }
     }
     for (int i = 0; i < height; i++)
