@@ -1,6 +1,7 @@
 #include "helpers.h"
 #include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -105,13 +106,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            int Gx_red = 0;
-            int Gx_green = 0;
-            int Gx_blue = 0;
-            int Gy_red = 0;
-            int Gy_green = 0;
-            int Gy_blue = 0;
-            float counter = 0;
+            float Gx_red = 0;
+            float Gx_green = 0;
+            float Gx_blue = 0;
+            float Gy_red = 0;
+            float Gy_green = 0;
+            float Gy_blue = 0;
+            int counter = 0;
             for (int k = i-1; k < (i + 2); k++)
             {
                 for (int l = j-1; l < (j + 2); l++)
@@ -133,10 +134,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     counter++;
                 }
             }
-            round(sqrt(Gx^2 + Gy^2));
-            copy[i][j].rgbtRed = round(sum_red/counter);
-            copy[i][j].rgbtGreen = round(sum_green/counter);
-            copy[i][j].rgbtBlue = round(sum_blue/counter);
+            std::min(round(sqrt(Gx^2 + Gy^2)), 255);
+            copy[i][j].rgbtRed = std::min(round(sqrt(Gx_red^2 + Gy_red^2)), 255);
+            copy[i][j].rgbtGreen = std::min(round(sqrt(Gx_green^2 + Gy_green^2)), 255);
+            copy[i][j].rgbtBlue = std::min(round(sqrt(Gx_blue^2 + Gy_blue^2)), 255);
             // printf("%i, %i, %i\n", image[i][j].rgbtRed, image[i][j].rgbtGreen, image[i][j].rgbtBlue);
         }
     }
