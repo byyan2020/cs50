@@ -134,7 +134,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     counter++;
                 }
             }
-            std::min(round(sqrt(Gx^2 + Gy^2)), 255);
+            
             copy[i][j].rgbtRed = std::min(round(sqrt(Gx_red^2 + Gy_red^2)), 255);
             copy[i][j].rgbtGreen = std::min(round(sqrt(Gx_green^2 + Gy_green^2)), 255);
             copy[i][j].rgbtBlue = std::min(round(sqrt(Gx_blue^2 + Gy_blue^2)), 255);
