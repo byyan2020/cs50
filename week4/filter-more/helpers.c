@@ -9,9 +9,9 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         {
             RGBTRIPLE pixel = image[i][j];
             int gray_value = (pixel.rgbtRed + pixel.rgbtGreen + pixel.rgbtBlue) / 3;
-            pixel.rgbtRed = gray_value;
-            pixel.rgbtGreen = gray_value;
-            pixel.rgbtBlue = gray_value;
+            image[i][j].rgbtRed = gray_value;
+            image[i][j].rgbtGreen = gray_value;
+            image[i][j].rgbtBlue = gray_value;
         }
     }
     return;
