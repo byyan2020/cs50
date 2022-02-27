@@ -135,9 +135,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
 
-            copy[i][j].rgbtRed = round(sqrt(Gx_red^2 + Gy_red^2));
-            copy[i][j].rgbtGreen = round(sqrt(Gx_green^2 + Gy_green^2));
-            copy[i][j].rgbtBlue =round(sqrt(Gx_blue^2 + Gy_blue^2));
+            copy[i][j].rgbtRed = round(sqrt(pow(Gx_red,2) + pow(Gy_red,2)));
+            copy[i][j].rgbtGreen = round(sqrt(pow(Gx_green,2) + pow(Gy_green,2)));
+            copy[i][j].rgbtBlue =round(sqrt(pow(Gx_blue,2) + pow(Gy_blue,2)));
             if (copy[i][j].rgbtRed > 255)
             {
                 copy[i][j].rgbtRed = 255;
