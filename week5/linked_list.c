@@ -26,7 +26,7 @@ int main(void)
     // update list to point to new node
     list = n;
 
-    printf("%i\n", list->number);
+    // printf("%i\n", list->number);
 
     // add a number to list
     n = malloc(sizeof(node));
@@ -38,5 +38,20 @@ int main(void)
     n->number = 2;
     n->next = NULL;
     list->next = n;
-    printf("%i\n", list->next->number);
+    // printf("%i\n", list->next->number);
+
+    // add a number to list
+    n = malloc(sizeof(node));
+    if (n == NULL)
+    {
+        free(list->next);
+        free(list);
+        return 1;
+    }
+    n->number = 3;
+    n->next = NULL;
+    list->next->next = n;
+
+    // print numbers
+    for (node *temp)
 }
