@@ -99,8 +99,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    int Gx[][] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
-    int Gy[][] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
+    int Gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
+    int Gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
 
     for (int i = 0; i < height; i++)
     {
@@ -113,9 +113,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             float Gy_green = 0;
             float Gy_blue = 0;
             int counter = 0;
-            for (int k = i-1, x = 0; k < (i + 2), x<3; k++, x++)
+            for (int k = i-1, x = 0; k < (i + 2); k++, x++)
             {
-                for (int l = j-1, y = 0; l < (j + 2), y < 4; l++, y++)
+                for (int l = j-1, y = 0; l < (j + 2); l++, y++)
                 {
                     if (k < 0 || l < 0 || k >= width || l >= width)
                     {
