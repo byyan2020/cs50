@@ -52,6 +52,19 @@ int main(void)
     n->next = NULL;
     list->next->next = n;
 
+    // insert number at the beginning
+    n = malloc(sizeof(node));
+    if (n == NULL)
+    {
+        free(list->next->next);
+        free(list->next);
+        free(list);
+    }
+    n->number = 0;
+    n->next = list->next;
+    list = n;
+
+
     // print numbers
     for (node *tmp = list; tmp != NULL; tmp = tmp->next)
     {
