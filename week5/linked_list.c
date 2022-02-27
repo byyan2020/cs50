@@ -38,4 +38,5 @@ int main(void)
     n->number = 2;
     n->next = NULL;
     list->next = n;
+    printf("%i\n", list->next->number);
 }
