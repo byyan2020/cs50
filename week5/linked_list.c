@@ -57,4 +57,13 @@ int main(void)
     {
         printf("%i\n", tmp->number);
     }
+
+    // free list
+    while (list != NULL)
+    {
+        node *tmp = list->next;
+        free(list);
+        list = tmp;
+    }
+    return 0;
 }
