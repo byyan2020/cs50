@@ -99,8 +99,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    int Gx[] = {-1, 0, 1, -2, 0, 2, -1, 0, 1};
-    int Gy[] = {-1, -2, -1, 0, 0, 0, 1, 2, 1};
+    int Gx[] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
+    int Gy[] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
 
     for (int i = 0; i < height; i++)
     {
@@ -113,31 +113,30 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             float Gy_green = 0;
             float Gy_blue = 0;
             int counter = 0;
-            for (int k = i-1; k < (i + 2); k++)
+            for (int k = i-1, x = 0; k < (i + 2), x<3; k++, x++)
             {
-                for (int l = j-1; l < (j + 2); l++)
+                for (int l = j-1, y = 0; l < (j + 2), y < 4; l++, y++)
                 {
                     if (k < 0 || l < 0 || k >= width || l >= width)
                     {
-                        counter++;
                         continue;
                     }
-                    
-                    Gx_red += image[k][l].rgbtRed * Gx[counter];
-                    Gx_green += image[k][l].rgbtGreen * Gx[counter];
-                    Gx_blue += image[k][l].rgbtBlue * Gx[counter];
 
-                    Gy_red += image[k][l].rgbtRed * Gy[counter];
-                    Gy_green += image[k][l].rgbtGreen * Gy[counter];
-                    Gy_blue += image[k][l].rgbtBlue * Gy[counter];
+                    Gx_red += image[k][l].rgbtRed * Gx[x][y];
+                    Gx_green += image[k][l].rgbtGreen * Gx[x][y];
+                    Gx_blue += image[k][l].rgbtBlue * Gx[x][y];
 
-                    counter++;
+                    Gy_red += image[k][l].rgbtRed * Gy[x][y];
+                    Gy_green += image[k][l].rgbtGreen * Gy[x][y];
+                    Gy_blue += image[k][l].rgbtBlue * Gy[x][y];
+
                 }
             }
 
             copy[i][j].rgbtRed = round(sqrt(pow(Gx_red,2) + pow(Gy_red,2)));
             copy[i][j].rgbtGreen = round(sqrt(pow(Gx_green,2) + pow(Gy_green,2)));
             copy[i][j].rgbtBlue =round(sqrt(pow(Gx_blue,2) + pow(Gy_blue,2)));
+
             if (copy[i][j].rgbtRed > 255)
             {
                 copy[i][j].rgbtRed = 255;
