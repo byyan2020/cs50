@@ -37,27 +37,50 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     // get a new array
+    RGBTRIPLE copy[height][width];
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            // ave rgb
-                //test border
-                // sum surround red value
-                // ave reb
-                // sum surround green value
-                // ave green
-                // sum surround blue value
-                // ave blue
-            // save rgb to a new array
-            int sum_red;
-            if ((i - 1) >= 0)
-            {
-                sum_red += image[i-1][j]
-            }
+            copy[i][j] = image[i][j];
         }
     }
-    // copy value to image
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            int sum_red;
+            int sum_green;
+            int sum_blue;
+            float counter = 0;
+            for (int k = i-1; k < i+2; k++)
+            {
+                for (int l = j-1; l < j+2; j++)
+                {
+                    if (k < 0 || l < 0 || k >= width || l >= width)
+                    {
+                        continue;
+                    }
+                    sum_red += image[k][l].rgbtRed;
+                    sum_green += image[k][l].rgbtGreen;
+                    sum_blue += image[k][l].rgbtBlue;
+                    counter++;
+                }
+            }
+
+            copy[i][j].rgbtRed = round(sum_red/counter);
+            copy[i][j].rgbtGreen = round(sum_green/counter);
+            copy[i][j].rgbtBlue = round(sum_blue/counter);
+        }
+    }
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            image[i][j] = copy[i][j];
+        }
+    }
     return;
 }
 
