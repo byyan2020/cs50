@@ -72,6 +72,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtRed = round(sum_red/counter);
             image[i][j].rgbtGreen = round(sum_green/counter);
             image[i][j].rgbtBlue = round(sum_blue/counter);
+            printf("%i, %i, %i\n", image[i][j].rgbtRed, image[i][j].rgbtGreen, image[i][j].rgbtBlue);
         }
     }
     // for (int i = 0; i < height; i++)
