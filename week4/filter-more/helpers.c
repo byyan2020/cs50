@@ -36,16 +36,28 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
+    // get a new array
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            // ave red
-                // sum surround value
-                    // if 
-
+            // ave rgb
+                //test border
+                // sum surround red value
+                // ave reb
+                // sum surround green value
+                // ave green
+                // sum surround blue value
+                // ave blue
+            // save rgb to a new array
+            int sum_red;
+            if ((i - 1) >= 0)
+            {
+                sum_red += image[i-1][j]
+            }
         }
     }
+    // copy value to image
     return;
 }
 
