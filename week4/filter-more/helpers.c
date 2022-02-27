@@ -40,7 +40,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            
+            BYTE average = image[i-1][j] + image[]
         }
     }
     return;
