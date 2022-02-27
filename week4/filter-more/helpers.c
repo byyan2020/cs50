@@ -117,7 +117,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     {
                         continue;
                     }
-                    sum_red += image[k][l].rgbtRed;
+                    sum_red += image[k][l].rgbtRed * (-1);
                     sum_green += image[k][l].rgbtGreen;
                     sum_blue += image[k][l].rgbtBlue;
                     counter++;
