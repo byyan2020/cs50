@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    BYTE *buffer = malloc(sizeof(BYTE) * 512);
+    BYTE *buffer[BLOCK_SIZE] = malloc(sizeof(BYTE) * 512);
 
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE);
     // look for beginning of a JPEG
