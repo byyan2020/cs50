@@ -33,6 +33,8 @@ int main(int argc, char *argv[])
 
     // if is jpeg
         // open a new JPEG file
+        // sprintf(filename, "%03i.jpg", 2);
+        // FILE *img = fopen(filename, "w");
         // write 512 byte
     // else
         // write 512 byte
