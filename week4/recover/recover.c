@@ -20,8 +20,8 @@ int main(int argc, char *argv[])
     }
 
     // check for if the forensic image can be open for reading
-    FILE *file;
-    if (file = fopen(argv[1], "r") == NULL)
+    FILE *file = fopen(argv[1], "r");
+    if (file  == NULL)
     {
         printf("image cannot be oppened for reading");
         return 1;
@@ -39,16 +39,16 @@ int main(int argc, char *argv[])
             if (counter == 0)
             {
                 counter++;
-                sprintf(filename, "%03i.jpg", counter);
                 FILE *img = fopen(filename, "w");
+                sprintf(img, "%03i.jpg", counter);
                 fwrite(buffer, 1, BLOCK_SIZE, img);
             }
             else
             {
                 fclose(img);
                 counter++;
-                sprintf(filename, "%03i.jpg", counter);
                 FILE *img = fopen(filename, "w");
+                sprintf(img, "%03i.jpg", counter);
                 fwrite(buffer, 1, BLOCK_SIZE, img);
             }
         }
