@@ -20,31 +20,30 @@ int main(int argc, char *argv[])
     }
 
     BYTE *buffer = malloc(sizeof(BYTE) * 512);
+    int counter = 0;
 
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE);
-    // look for beginning of a JPEG
-    /*
-    if is jpeg
-        open a new file
-        write
-    else
-        continue
-     */
+    {
+        // if start of new jpeg
+        if (isJpeg)
+        {
+            // if first jpeg
+            if (counter == 0)
+            {
+                sprintf(filename, "%03i.jpg", 2);
+                FILE *img = fopen(filename, "w");
+            }
+
+        }
 
     // if is jpeg
         // open a new JPEG file
-        sprintf(filename, "%03i.jpg", 2);
-        FILE *img = fopen(filename, "w");
 
     // write 512 byte
     fwrite(buffer, 1, BLOCK_SIZE, img);
+    }
 
 
-        while (isJpeg)
-        {
-            // open a new JPEG file
-            // write 512 byte until a new JPEG is found
-        }
 
 
 
