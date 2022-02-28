@@ -39,14 +39,17 @@ int main(int argc, char *argv[])
             if (counter == 0)
             {
                 counter++;
-                FILE *img = fopen(sprintf(buffer, "%03i.jpg", counter), "w");
+                char *filename = 8
+                sprintf(filename, "%03i.jpg", counter);
+                FILE *img = fopen(filename, "w");
                 fwrite(buffer, 1, BLOCK_SIZE, img);
             }
             else
             {
                 fclose(img);
                 counter++;
-                FILE *img = fopen(sprintf(buffer, "%03i.jpg", counter), "w");
+                sprintf(filename, "%03i.jpg", counter);
+                FILE *img = fopen(filename, "w");
                 fwrite(buffer, 1, BLOCK_SIZE, img);
             }
         }
