@@ -25,11 +25,11 @@ int main(int argc, char *argv[])
     // look for beginning of a JPEG
         if (isJpeg)
         {
+            // open a new JPEG file
+
+            // write 512 byte until a new JPEG is found
             
         }
-    // open a new JPEG file
-
-    // write 512 byte until a new JPEG is found
 
 
 
