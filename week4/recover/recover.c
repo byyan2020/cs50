@@ -17,7 +17,9 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    fread(buffer, )
+    buffer
+
+    fread(buffer, 1, BLOCK_SIZE, file);
     // look for beginning of a JPEG
 
     // open a new JPEG file
