@@ -2,7 +2,10 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+bool isJpeg(BYTE buffer[]);
+
 int BLOCK_SIZE = 512;
+
 int main(int argc, char *argv[])
 {
     // check for one command-line argument
@@ -25,28 +28,34 @@ int main(int argc, char *argv[])
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE);
     {
         // if start of new jpeg
-        if (isJpeg)
+        if (isJpeg(buffer))
         {
             // if first jpeg
             if (counter == 0)
             {
-                sprintf(filename, "%03i.jpg", 2);
+                counter++;
+                sprintf(filename, "%03i.jpg", counter);
                 FILE *img = fopen(filename, "w");
+                fwrite(buffer, 1, BLOCK_SIZE, img);
             }
-
+            else
+            {
+                fclose(img);
+                counter++;
+                sprintf(filename, "%03i.jpg", counter);
+                FILE *img = fopen(filename, "w");
+                fwrite(buffer, 1, BLOCK_SIZE, img);
+            }
+        }
+        else
+        {
+            if (counter != 0)
+            {
+                fwrite(buffer, 1, BLOCK_SIZE, img);
+            }
         }
 
-    // if is jpeg
-        // open a new JPEG file
-
-    // write 512 byte
-    fwrite(buffer, 1, BLOCK_SIZE, img);
     }
-
-
-
-
-
 }
 
 bool isJpeg(BYTE buffer[])
