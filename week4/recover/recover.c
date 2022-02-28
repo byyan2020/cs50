@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <cs50.h>
+#include <getopt.h>
+
 
 typedef uint8_t  BYTE;
 bool isJpeg(BYTE buffer[]);
