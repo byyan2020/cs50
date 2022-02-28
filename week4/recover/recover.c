@@ -23,7 +23,18 @@ int main(int argc, char *argv[])
 
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE);
     // look for beginning of a JPEG
-        if (isJpeg)
+
+    // if is jpeg
+        // open a new JPEG file
+        // write 512 byte
+    // if not jpeg
+        // write 512 byte
+    // if is jpeg
+        // open a new JPEG
+        // write 512 byte
+
+
+        while (isJpeg)
         {
             // open a new JPEG file
             // write 512 byte until a new JPEG is found
