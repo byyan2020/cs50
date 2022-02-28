@@ -11,6 +11,18 @@ int main(int argc, char *argv[])
     }
 
     // check for if the forensic image can be open for reading
-    FILE *file = fopen(argv[1], "r");
+    if (FILE *file = fopen(argv[1], "r") == NULL)
+    {
+        printf("image cannot be oppened for reading");
+        return 1;
+    }
+
+    // look for beginning of a JPEG
+
+    // open a new JPEG file
+
+    // write 512 byte until a new JPEG is found
+
+
 
 }
