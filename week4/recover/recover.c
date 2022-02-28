@@ -3,6 +3,7 @@
 #include <stdint.h>
 #include <cs50.h>
 
+typedef uint8_t  BYTE;
 bool isJpeg(BYTE buffer[]);
 
 int BLOCK_SIZE = 512;
