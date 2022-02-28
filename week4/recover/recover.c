@@ -48,6 +48,7 @@ int main(int argc, char *argv[])
             {
                 fclose(img);
                 counter++;
+                char *filename = malloc(sizeof(char) * 8);
                 sprintf(filename, "%03i.jpg", counter);
                 FILE *img = fopen(filename, "w");
                 fwrite(buffer, 1, BLOCK_SIZE, img);
