@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+int BLOCK_SIZE = 512;
 int main(int argc, char *argv[])
 {
     // check for one command-line argument
@@ -18,11 +19,14 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    buffer;
+    BYTE *buffer = malloc(sizeof(BYTE) * 512);
 
-    fread(buffer, 1, BLOCK_SIZE, file);
+    while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE);
     // look for beginning of a JPEG
-
+        if (isJpeg)
+        {
+            
+        }
     // open a new JPEG file
 
     // write 512 byte until a new JPEG is found
