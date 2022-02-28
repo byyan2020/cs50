@@ -20,7 +20,8 @@ int main(int argc, char *argv[])
     }
 
     // check for if the forensic image can be open for reading
-    if (FILE *file = fopen(argv[1], "r") == NULL)
+    FILE *file;
+    if (file = fopen(argv[1], "r") == NULL)
     {
         printf("image cannot be oppened for reading");
         return 1;
