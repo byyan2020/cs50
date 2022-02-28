@@ -3,5 +3,9 @@
 
 int main(int argc, char *argv[])
 {
-    // Check for one command-line argument
+    // check for one command-line argument
+
+    // check for if the forensic image can be open for reading
+
+    
 }
