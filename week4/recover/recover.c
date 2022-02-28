@@ -26,9 +26,7 @@ int main(int argc, char *argv[])
         if (isJpeg)
         {
             // open a new JPEG file
-
             // write 512 byte until a new JPEG is found
-            
         }
 
 
