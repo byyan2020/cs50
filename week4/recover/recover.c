@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 int main(int argc, char *argv[])
 {
@@ -17,7 +18,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    BYTE buffer;    
+    buffer;
 
     fread(buffer, 1, BLOCK_SIZE, file);
     // look for beginning of a JPEG
