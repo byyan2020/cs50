@@ -29,6 +29,8 @@ int main(int argc, char *argv[])
 
     BYTE *buffer = malloc(sizeof(BYTE) * 512);
     int counter = 0;
+    FILE *img_pointer = NULL;
+    ch
 
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE);
     {
