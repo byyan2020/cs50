@@ -6,7 +6,7 @@
 
 
 typedef uint8_t  BYTE;
-bool isJpeg(BYTE buffer[]);
+bool isJpeg(BYTE *buffer);
 
 int BLOCK_SIZE = 512;
 
