@@ -61,8 +61,8 @@ int main(int argc, char *argv[])
                 fwrite(buffer, 1, BLOCK_SIZE, img);
             }
         }
-
     }
+    free(buffer);
 }
 
 bool isJpeg(BYTE *buffer)
