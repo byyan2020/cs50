@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
     BYTE *buffer = malloc(sizeof(BYTE) * 512);
     int counter = 0;
-    FILE *img_pointer = NULL;
+    FILE *img = NULL;
     char filename[8];
 
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE);
@@ -41,18 +41,16 @@ int main(int argc, char *argv[])
             if (counter == 0)
             {
                 counter++;
-                char *filename = malloc(sizeof(char) * 8);
                 sprintf(filename, "%03i.jpg", counter);
-                FILE *img = fopen(filename, "w");
+                img = fopen(filename, "w");
                 fwrite(buffer, 1, BLOCK_SIZE, img);
             }
             else
             {
                 fclose(img);
                 counter++;
-                char *filename = malloc(sizeof(char) * 8);
                 sprintf(filename, "%03i.jpg", counter);
-                FILE *img = fopen(filename, "w");
+                img = fopen(filename, "w");
                 fwrite(buffer, 1, BLOCK_SIZE, img);
             }
         }
