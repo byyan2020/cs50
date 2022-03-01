@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     FILE *img = NULL;
     char filename[8];
 
-    while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE);
+    while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
     {
         // if start of new jpeg
         if (isJpeg(buffer))
