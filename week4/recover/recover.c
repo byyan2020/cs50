@@ -40,18 +40,18 @@ int main(int argc, char *argv[])
             // if first jpeg
             if (counter == 0)
             {
-                counter++;
                 sprintf(filename, "%03i.jpg", counter);
                 img = fopen(filename, "w");
                 fwrite(buffer, 1, BLOCK_SIZE, img);
+                counter++;
             }
             else
             {
                 fclose(img);
-                counter++;
                 sprintf(filename, "%03i.jpg", counter);
                 img = fopen(filename, "w");
                 fwrite(buffer, 1, BLOCK_SIZE, img);
+                counter++;
             }
         }
         else
