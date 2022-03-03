@@ -33,6 +33,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+bool is_cycle(int end, int cycle_start);
 
 int main(int argc, string argv[])
 {
@@ -166,7 +167,7 @@ void sort_pairs(void)
     for (int i = 0; i < pair_count; i++)
     {
         strengths[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
-        printf("(%s,%s) %i", candidates[pairs[i].winner], candidates[pairs[i].loser], strengths[i]);
+        // printf("(%s,%s) %i", candidates[pairs[i].winner], candidates[pairs[i].loser], strengths[i]);
     }
 
     printf("\n");
@@ -196,7 +197,7 @@ void sort_pairs(void)
         }
     }
 
-    for (int i = 0; i < pair_count; i++)
+/*     for (int i = 0; i < pair_count; i++)
     {
         printf("%i ", strengths[i]);
     }
@@ -216,7 +217,7 @@ void sort_pairs(void)
         printf("(%s,%s) %i", candidates[pairs[i].winner], candidates[pairs[i].loser], strengths[i]);
     }
 
-    printf("\n");
+    printf("\n"); */
     return;
 }
 
@@ -224,32 +225,36 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    int locked_source[candidate_count];
-    for (int i = 0; i < candidate_count; i++)
-    {
-        locked_source[i] = 0;
-    }
-
-    bool flag = true;
     for (int i = 0; i < pair_count; i++)
     {
-        // detect cycle. wrong idea
-        locked_source[pairs[i].winner]++;
-        for (int j = 0; j < candidate_count; j++)
-        {
-            if (locked_source[j] != 1)
-                {
-                    flag = false;
-                }
-        }
-        if (flag == false)
+        if (! is_cycle(pairs[i].loser, pairs[i].winner))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
+            // printf("locked: %s-%s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
         }
 
     }
     return;
 }
+
+bool is_cycle(int end, int cycle_start)
+{
+    if (end == cycle_start)
+    {
+        return true;
+    }
+
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (locked[end][i])
+        {
+            return is_cycle(i, cycle_start);
+        }
+    }
+
+    return false;
+}
+
 
 // Print the winner of the election
 void print_winner(void)
