@@ -262,44 +262,21 @@ bool is_cycle(int end, int cycle_start)
 // Print the winner of the election
 void print_winner(void)
 {
-    int locked_source[candidate_count];
-    for (int i = 0; i < candidate_count; i++)
+    int false_count = 0;
+    for (int j = 0; j < candidate_count; j++)
     {
-        locked_source[i] = 0;
-    }
-
-
-    for (int i = 0; i < candidate_count; i++)
-    {
-        for (int j = 0; j < candidate_count; j++)
+        for (int i = 0; i < candidate_count; i++)
         {
-            if (locked[i][j])
+            if (locked[i][j] == false)
             {
-                locked_source[i]++;
+                false_count++;
             }
         }
-    }
-    printf("locked_source: ");
-    for (int i = 0; i < candidate_count; i++)
-    {
-        printf("%i ", locked_source[i]);
-    }
-    printf("\n");
-
-    int temp = locked_source[0];
-    int winner_index = 0;
-    for (int i = 0; i < candidate_count; i++)
-    {
-        if (temp < locked_source[i])
+        if (false_count == candidate_count)
         {
-            temp = locked_source[i];
-            winner_index = i;
+            string winner = candidates[j];
+            printf("%s\n", winner);
+            return;
         }
     }
-
-    string winner = candidates[winner_index];
-
-    printf("winner_id: %i, winner: %s\n", winner_index, winner);
-
-    return;
 }
