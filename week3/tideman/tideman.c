@@ -265,6 +265,7 @@ void print_winner(void)
         locked_source[i] = 0;
     }
 
+
     for (int i = 0; i < candidate_count; i++)
     {
         for (int j = 0; j < candidate_count; j++)
@@ -275,6 +276,12 @@ void print_winner(void)
             }
         }
     }
+    printf("locked_source: ");
+    for (int i = 0; i < candidate_count; i++)
+    {
+        printf("%i ", locked_source[i]);
+    }
+    printf("\n");
 
     int temp = locked_source[0];
     int winner_index = 0;
@@ -289,7 +296,7 @@ void print_winner(void)
 
     string winner = candidates[winner_index];
 
-    printf("%s\n", winner);
+    printf("winner_id: %i, winner: %s\n", winner_index, winner);
 
     return;
 }
