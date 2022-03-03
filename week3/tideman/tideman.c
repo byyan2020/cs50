@@ -248,7 +248,10 @@ bool is_cycle(int end, int cycle_start)
     {
         if (locked[end][i])
         {
-            return is_cycle(i, cycle_start);
+            if (is_cycle(i, cycle_start))
+            {
+                return true;
+            }
         }
     }
 
