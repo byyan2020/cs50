@@ -276,7 +276,7 @@ void print_winner(void)
         {
             string winner = candidates[j];
             printf("%s\n", winner);
-            return;
         }
     }
+    return;
 }
