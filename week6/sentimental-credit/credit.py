@@ -14,4 +14,4 @@ if sum % 10 != 0:
 else:
     if length == 15:
         print("American Express")
-    elif 
+    elif str(number)[0]
