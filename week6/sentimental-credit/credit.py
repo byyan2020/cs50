@@ -1,1 +1,6 @@
-from cs50 impoer get_int
+from cs50 import get_int
+
+number = get_int("Number: ")
+
+sum = 0
+length = len(number)
