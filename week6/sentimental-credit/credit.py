@@ -5,7 +5,7 @@ number = str(get_int("Number: "))
 sum = 0
 length = len(number)
 for i in range(length-2, -1, -2):
-    print(int(number[i]))
+    print(i, int(number[i]))
     sum += int(number[i]) * 2
 for j in range(length - 1, -1, -2):
     print(int(number[i]))
