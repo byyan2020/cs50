@@ -14,7 +14,7 @@ for j in range(length-1, -1, -2):
     sum += int(number[j])
 # print(sum)
 
-print(sum)
+# print(sum)
 if sum % 10 != 0:
     print("INVALID")
 else:
