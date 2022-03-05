@@ -19,12 +19,14 @@ def main():
     with open("2019w.csv", "r") as file:
         reader = csv.DictReader(file)
         for team in reader:
+            team[rating] = int(team[rating])
             teams.append(team)
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
     for team in teams:
         
+
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
