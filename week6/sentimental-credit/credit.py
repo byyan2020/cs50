@@ -7,9 +7,9 @@ length = len(number)
 for i in range(length-2, -1, -2):
     print(i, int(number[i]))
     sum += int(number[i]) * 2
-for j in range(length - 1, -1, -2):
-    print(int(number[i]))
-    sum += int(number[i])
+for j in range(length-1, -1, -2):
+    print(j, int(number[j]))
+    sum += int(number[j])
 
 print(sum)
 if sum % 10 != 0:
