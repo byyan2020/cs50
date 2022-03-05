@@ -26,16 +26,16 @@ def count_letters(text):
     alpha = "abcdefghijklmnopqrstuvwxyz"
     count = 0
     for i in text:
-        if i in alpha or i in alpha.upper():
+        if i in alpha or alpha.upper():
             count += 1
     return count
 
 def count_words(text):
-    count = 1
+    count = 0
     for i in text:
         if i == " ":
             count += 1
-    return count
+    return count + 1
 
 def count_sentences(text):
     count = 0
