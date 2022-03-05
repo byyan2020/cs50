@@ -13,5 +13,8 @@ if sum % 10 != 0:
     print("INVALID")
 else:
     if length == 15:
-        print("American Express")
-    elif str(number)[0]
+        print("AMEX")
+    elif str(number)[0] == "4":
+        print("VISA")
+    else:
+        print("MASTERCARD")
