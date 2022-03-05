@@ -3,17 +3,17 @@ from cs50 import get_string
 def main():
     text = get_string("Text: ")
     letters = count_letters(text)
-    print (letters)
+    # print (letters)
     words = count_words(text)
-    print (words)
+    # print (words)
     sentences = count_sentences(text)
-    print (sentences)
+    # print (sentences)
     L = letters / words * 100
-    print(L)
+    # print(L)
     S = sentences / words * 100
-    print(S)
+    # print(S)
     index = round(0.0588 * L - 0.296 * S - 15.8)
-    print (index)
+    # print (index)
 
     if index > 16:
         print("Grade 16+")
