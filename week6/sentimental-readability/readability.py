@@ -19,7 +19,9 @@ def main():
 
 
 def count_letters(text):
-    return
+    alpha = "abcdefghck
+    for i in text:
+        if i in
 
 def count_words(text):
     return
