@@ -1,1 +1,1 @@
-from cs50 
+from cs50 impoer get_int
