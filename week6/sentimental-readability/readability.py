@@ -16,18 +16,27 @@ def main():
     else:
         print(f"Grade {index}")
 
-
-
 def count_letters(text):
-    alpha = "abcdefghck
+    alpha = "abcdefghijklmnopqrstuvwxyz"
+    count = 0
     for i in text:
-        if i in
+        if i in alpha or alpha.upper():
+            count += 1
+    return count
 
 def count_words(text):
-    return
+    count = 0
+    for i in text:
+        if i == " ":
+            count += 1
+    return count
 
 def count_sentence(text):
-    return
+    count = 0
+    for i in text:
+        if i == "." or "!" or "?":
+            count += 1
+    return count
 
-if __name__ == __main__:
+if "__name__" == "__main__":
     main()
