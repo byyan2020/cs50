@@ -40,7 +40,7 @@ def count_words(text):
 def count_sentences(text):
     count = 0
     for i in text:
-        if i == ("." or "!" or "?"):
+        if i in [".", "!", "?"]:
             print(i)
             count += 1
     return count
