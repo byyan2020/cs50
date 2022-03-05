@@ -1,5 +1,8 @@
-import cs50
+from cs50 import get_int
 
-height =
-if get_int("Height: ") not in range(1, 9):
+height = get_int("Height: ")
+while height < 1 or height > 8:
     height = get_int("Height: ")
+
+for i in range(1, height + 1):
+    print(" " * (height - i) + "#" * i + "  " + "#" * i)
