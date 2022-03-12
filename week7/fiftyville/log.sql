@@ -60,8 +60,10 @@ AND phone_number IN (
 SELECT id FROM flights
 WHERE year = 2021
 AND month = 7
-AND day = 28
-AND 
-
-SELECT id FROM airports
-WHERE city like "fiftyville";
+AND day = 29
+AND origin_airport_id = (
+    SELECT id FROM airports
+    WHERE city like "fiftyville"
+)
+ORDER BY hour, minute
+LIMIT 1;
