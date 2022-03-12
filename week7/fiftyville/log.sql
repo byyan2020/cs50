@@ -73,7 +73,7 @@ AND passport_number IN (
     )
 );
 
-
+--find out city thei
 SELECT city FROM airports
 WHERE id = (
     SELECT destination_airport_id FROM flights
