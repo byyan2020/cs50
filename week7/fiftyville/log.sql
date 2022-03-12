@@ -23,7 +23,7 @@ AND transcript LIKE "%bakery%";
 -- Emma    | I'm the bakery owner, and someone came in, suspiciously whispering into a phone for about half an hour. They never bought anything.
 
 
-SELECT id FROM people
+SELECT name FROM people
 WHERE license_plate IN (
     -- check the cars that left the parking lot in that time frame
     SELECT license_plate FROM bakery_security_logs
@@ -54,16 +54,36 @@ AND phone_number IN (
     AND month = 7
     AND day = 28
     AND duration < 60
+)
+
+AND passport_number IN (
+    --purchase the earliest flight out of Fiftyville tomorrow
+    SELECT passport_number FROM passengers
+    WHERE flight_id IN (
+        SELECT id FROM flights
+        WHERE year = 2021
+        AND month = 7
+        AND day = 29
+        AND origin_airport_id = (
+            SELECT id FROM airports
+            WHERE city like "fiftyville"
+        )
+        ORDER BY hour, minute
+        LIMIT 1
+    )
 );
 
---purchase the earliest flight out of Fiftyville tomorrow
-SELECT id FROM flights
-WHERE year = 2021
-AND month = 7
-AND day = 29
-AND origin_airport_id = (
-    SELECT id FROM airports
-    WHERE city like "fiftyville"
-)
-ORDER BY hour, minute
-LIMIT 1;
+
+SELECT city FROM airports
+WHERE id = (
+    SELECT destination_airport_id FROM flights
+    WHERE year = 2021
+    AND month = 7
+    AND day = 29
+    AND origin_airport_id = (
+        SELECT id FROM airports
+        WHERE city like "fiftyville"
+    )
+    ORDER BY hour, minute
+    LIMIT 1
+);
