@@ -32,4 +32,6 @@ AND hour = 10
 AND minute BETWEEN 15 AND 25;
 
 -- ATM on Leggett street, withdrawing money
+
+
 --purchase the earliest flight out of Fiftyville tomorrow
