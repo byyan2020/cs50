@@ -1,8 +1,9 @@
-SELECT name FROM people
+SELECT DISTINCT name FROM people
+JOIN stars ON people.id = stars.person_id
+JOIN movies ON movies.id = stars.movie_id
+WHERE title IN(
+SELECT title FROM movies
 JOIN stars ON movies.id = stars.movie_id
-JOIN movie ON movie.id = stars.movie_id
-WHERE id IN (
-    SELECT person_id FROM stars WHERE movie_id IN (
-        
-    )
-    )
+JOIN people ON people.id = stars.person_id
+WHERE name = "Kevin Bacon"
+AND birth = 1958);
