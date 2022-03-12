@@ -23,7 +23,7 @@ AND transcript LIKE "%bakery%";
 -- Emma    | I'm the bakery owner, and someone came in, suspiciously whispering into a phone for about half an hour. They never bought anything.
 
 
-SELECT name FROM people
+SELECT id, name FROM people
 WHERE license_plate IN (
     -- check the cars that left the parking lot in that time frame
     SELECT license_plate FROM bakery_security_logs
@@ -72,6 +72,7 @@ AND passport_number IN (
         LIMIT 1
     )
 );
+-- the thief if Bruce, id is 686048
 
 --find out city thief fly to
 SELECT city FROM airports
@@ -93,69 +94,10 @@ SELECT name FROM people
 WHERE phone_number IN (
     SELECT receiver FROM phone_calls
     WHERE caller IN (
-        SELECT phone_number FROM people
-        WHERE license_plate IN (
-            -- check the cars that left the parking lot in that time frame
-            SELECT license_plate FROM bakery_security_logs
-            WHERE year = 2021
-            AND month = 7
-            AND day = 28
-            AND hour = 10
-            AND minute BETWEEN 15 AND 25
-        )
-        AND id IN (
-            -- ATM on Leggett street, withdrawing money
-            SELECT person_id FROM bank_accounts
-            JOIN people ON people.id = bank_accounts.person_id
-            WHERE account_number IN (
-                SELECT account_number FROM atm_transactions
-                WHERE year = 2021
-                AND month = 7
-                AND day = 28
-                AND atm_location = "Leggett Street"
-                AND transaction_type = "withdraw"
-            )
-        )
-
-        AND phone_number IN (
-            -- phone call less than 1 minite
-            SELECT caller FROM phone_calls
-            WHERE year = 2021
-            AND month = 7
-            AND day = 28
-            AND duration < 60
-        )
-
-        AND passport_number IN (
-            --purchase the earliest flight out of Fiftyville tomorrow
-            SELECT passport_number FROM passengers
-            WHERE flight_id IN (
-                SELECT id FROM flights
-                WHERE year = 2021
-                AND month = 7
-                AND day = 29
-                AND origin_airport_id = (
-                    SELECT id FROM airports
-                    WHERE city like "fiftyville"
-                )
-                ORDER BY hour, minute
-                LIMIT 1
-            )
-        )
-
-        --find out city thief fly to
-        SELECT city FROM airports
-        WHERE id = (
-            SELECT destination_airport_id FROM flights
-            WHERE year = 2021
-            AND month = 7
-            AND day = 29
-            AND origin_airport_id = (
-                SELECT id FROM airports
-                WHERE city like "fiftyville"
-            )
-            ORDER BY hour, minute
-            LIMIT 1
-        )
+    SELECT phone_number FROM people
+    WHERE id = 686048
     )
+AND year = 2021
+AND month = 7
+AND day = 29
 );
