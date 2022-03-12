@@ -56,5 +56,12 @@ AND phone_number IN (
     AND duration < 60
 );
 
-
 --purchase the earliest flight out of Fiftyville tomorrow
+SELECT id FROM flights
+WHERE year = 2021
+AND month = 7
+AND day = 28
+AND 
+
+SELECT id FROM airports
+WHERE city like "fiftyville";
