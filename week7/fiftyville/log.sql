@@ -38,13 +38,18 @@ AND id IN (
     SELECT person_id FROM bank_accounts
     JOIN people ON people.id = bank_accounts.person_id
     WHERE account_number IN (
-    SELECT account_number FROM atm_transactions
-    WHERE year = 2021
-    AND month = 7
-    AND day = 28
-    AND atm_location = "Leggett Street"
-    AND transaction_type = "withdraw"
+        SELECT account_number FROM atm_transactions
+        WHERE year = 2021
+        AND month = 7
+        AND day = 28
+        AND atm_location = "Leggett Street"
+        AND transaction_type = "withdraw"
     )
+)
+
+AND phone_number IN (
+    -- phone call less than 1 minite
+    
 );
 
 --purchase the earliest flight out of Fiftyville tomorrow
