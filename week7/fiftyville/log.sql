@@ -23,4 +23,4 @@ AND transcript LIKE "%bakery%";
 
 -- check the cars that left the parking lot in that time frame
 -- ATM on Leggett street, withdrawing money
---
+--purchase the earliest flight out of Fiftyville tomorrow
