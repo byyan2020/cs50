@@ -49,7 +49,12 @@ AND id IN (
 
 AND phone_number IN (
     -- phone call less than 1 minite
-    
+    SELECT caller FROM phone_calls
+    WHERE year = 2021
+    AND month = 7
+    AND day = 28
+    AND duration < 60
 );
+
 
 --purchase the earliest flight out of Fiftyville tomorrow
