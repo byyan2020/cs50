@@ -12,8 +12,14 @@
                 correct.addEventListenser('click', function(){
                     correct.style.backgrounfColor = 'green';
                     document.querySelector('#feedback').innerHTML = 'Correct!';
-                })
-            })
+                });
+
+                let incorrect = document.querySelector('.incorrect');
+                incorrect.addEventListenser('click', function(){
+                    incorrect.style.backgroundColor = 'red';
+                    document.querySelector('#feedback1').innerHTML = 'Incorrect';
+                });
+            });
         </script>
     </head>
     <body>
