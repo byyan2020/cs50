@@ -23,8 +23,8 @@
                 }
 
                 document.querySelector('button').addEventListener('click', function(){
-                    let input = document.querySelector('input')
-                    if (input.value = "hello"){
+                    let input = document.querySelector('input');
+                    if (input.value === "hello"){
                             input.style.backgroundColor = 'green';
                             document.querySelector('#feedback2').innerHTML = 'Correct!';
                     }
@@ -60,7 +60,7 @@
                 <h3>
                 In which country is it illegal to own only one guinea pig, as a lone guinea pig might be lonely?
                 </h3>
-                
+
                 <input type = "text" name = "answer">
                 <button autofocus autocomplete = 'off'> Check Answer </button>
                 <p id = "feedback2"></p>
