@@ -22,11 +22,15 @@
                     });
                 }
 
-                document.querySelector('button').addEventListener('click', function(){
+                document.querySelector('#check').addEventListener('click', function(){
                     let input = document.querySelector('input');
                     if (input.value === "hello"){
                             input.style.backgroundColor = 'green';
                             document.querySelector('#feedback2').innerHTML = 'Correct!';
+                    }
+                    else{
+                        input.style.backgroundColor = 'red';
+                        document.querySelector('#feedback2').innerHTML = 'Incorrect!';
                     }
                 });
 
@@ -62,7 +66,7 @@
                 </h3>
 
                 <input type = "text" name = "answer">
-                <button autofocus autocomplete = 'off'> Check Answer </button>
+                <button id = 'check' autofocus autocomplete = 'off'> Check Answer </button>
                 <p id = "feedback2"></p>
 
             </div>
