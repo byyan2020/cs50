@@ -21,18 +21,17 @@
                         document.querySelector('#feedback1').innerHTML = 'Incorrect';
                     });
                 }
+
+                document.querySelector('button').addEventListener('click', function(){
+                    let input = document.querySelector('input')
+                    if (input.value = "hello"){
+                            input.style.backgroundColor = 'green';
+                            document.querySelector('#feedback2').innerHTML = 'Correct!';
+                    }
                 });
 
-            document.querySelector('button').addEventListener('DOMContentLoaded', function(){
-                let input = document.querySelector('input')
-                if (input.value = "hello"){
-                    input.addEventListener('click', function(){
-                        input.style.backgroundColor = 'green';
-                        document.querySelector('#feedback2').innerHTML = 'Correct!';
-                    })
-                }
+                });
 
-            })
         </script>
     </head>
     <body>
