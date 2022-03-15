@@ -24,7 +24,14 @@
                 });
 
             document.addEventListener('DOMContentLoaded', function(){
-                let answer = document.querySelector('input')
+                let input = document.querySelector('input')
+                if (input.value = "hello"){
+                    input.addEventListener('click', function(){
+                        input.style.backgroundColor = 'green';
+                        document.querySelector('#feedback2').innerHTML = 'Correct!';
+                    })
+                }
+
             })
         </script>
     </head>
