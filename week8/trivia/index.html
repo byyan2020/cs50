@@ -9,14 +9,14 @@
             // TODO: Add code to check answers to questions
             document.addEventListener('DOMContentLoaded', function(){
                 let correct = document.querySelector('.correct');
-                correct.addEventListenser('click', function(){
+                correct.addEventListener('click', function(){
                     correct.style.backgrounfColor = 'green';
                     document.querySelector('#feedback').innerHTML = 'Correct!';
                 });
 
-                let incorrect = document.querySelectorAll('.incorrect');
+                let incorrects = document.querySelectorAll('.incorrect');
                 for (let i = 0; i < incorrects.length; i++){
-                    incorrect.addEventListenser('click', function(){
+                    incorrects[i].addEventListener('click', function(){
                         incorrect.style.backgroundColor = 'red';
                         document.querySelector('#feedback1').innerHTML = 'Incorrect';
                     });
