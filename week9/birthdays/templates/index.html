@@ -37,12 +37,12 @@
                         <!-- TODO: Loop through the database entries to display them in this table -->
                         {% for person in people %}
                             <tr>
-                                <td>{{person["name"]}}</td>
-                                <td>{{person["month"]}}/{{person["day"]}}</td>
+                                <td>{{person.name}}</td>
+                                <td>{{person.month}}/{{person["day"]}}</td>
                                 <td>
                                     <form action="/delete" method="post">
-                                        <input name="id" type="hidden" value="{{person.id}}">
-                                        <input type="button" value="Delete">
+                                        <input name="id" type="hidden" value="{{ person.id }}">
+                                        <input type="submit" value="Delete">
                                     </form>
                                 </td>
                             </tr>
